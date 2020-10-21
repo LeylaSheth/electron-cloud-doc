@@ -1,4 +1,12 @@
 body {
   padding: 0;
   margin: 0;
+  .icon-button {
+    background: none;
+    border: none;
+    color: inherit;
+  }
+  .c-link {
+    cursor: pointer;
+  }
 }

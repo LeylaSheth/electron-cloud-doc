@@ -11,29 +11,37 @@ module.exports = {
   },
   module: {
     rules: [{
-      //预处理
-      enforce: 'pre',
-      test: /.(js|jsx)$/,
-      loader: "eslint-loader",
-      exclude: [
-        path.resolve(__dirname, "../node_modules")
-      ]
-    }, {
-      test: /.jsx$/,
-      loader: 'babel-loader'
-    }, {
-      test: /.js$/,
-      loader: 'babel-loader',
-      exclude: [
-        path.join(__dirname, '../node_modules')
-      ]
-    }, {
-      test: /\.scss$/,
-      use: [
-        'style-loader',
-        'css-loader',
-        'sass-loader'
-      ]
-    }]
+        //预处理
+        enforce: 'pre',
+        test: /.(js|jsx)$/,
+        loader: "eslint-loader",
+        exclude: [
+          path.resolve(__dirname, "../node_modules")
+        ]
+      }, {
+        test: /.jsx$/,
+        loader: 'babel-loader'
+      }, {
+        test: /.js$/,
+        loader: 'babel-loader',
+        exclude: [
+          path.join(__dirname, '../node_modules')
+        ]
+      }, {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      }
+    ]
   }
 }
