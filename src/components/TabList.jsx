@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './TabList.scss';
 
-const TabList = ({ files, activeId, unsavedIds, onTabClick, onCloseTab }) => {
+const TabList = ({ files, activeId, unsavedIds, onTabClick, onTabClose }) => {
   console.log('hi');
   return (
     <ul className="nav nav-pills tablist-component">
@@ -32,7 +32,7 @@ const TabList = ({ files, activeId, unsavedIds, onTabClick, onCloseTab }) => {
                 aria-hidden="true"
                 onClick={(e) => {
                   e.stopPropagation();
-                  onCloseTab(file.id);
+                  onTabClose(file.id);
                 }}
               >
                 <FontAwesomeIcon title="close" icon={faTimes} />
@@ -53,7 +53,7 @@ TabList.propTypes = {
   activeId: PropTypes.string.isRequired,
   unsavedIds: PropTypes.instanceOf(Array),
   onTabClick: PropTypes.func.isRequired,
-  onCloseTab: PropTypes.func.isRequired,
+  onTabClose: PropTypes.func.isRequired,
 };
 
 TabList.defaultProps = {
